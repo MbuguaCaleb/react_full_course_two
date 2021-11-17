@@ -1,37 +1,53 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import './index.css'
 
-//JSX Rules
-//return single element
-// div //section /article/fragment
-//Attriutes and events must be in Camel Case
-//so as to return Many divs i can return them in a fragment
-//use camel case for HTML attribute
-//close every element
-// i may omit paranthesis but i must make sure that my opening tag is
-//in the same line as the closing tag
+//modeling my Data
+const firstBook = {
+  img: 'https://images-na.ssl-images-amazon.com/images/I/41hS71+HNmL._SY344_BO1,204,203,200_.jpg',
+  title: 'Bible Teacher',
+  author: 'David Pawson',
+}
+const secondBook = {
+  img: 'https://m.media-amazon.com/images/I/81obaCHjmfL._AC_UL320_.jpg',
+  title: 'Evangelist',
+  author: 'Billy Graham',
+}
 
-function Greeting() {
+function BookList() {
   return (
-    <div className=''>
-      <h3>Hello People!</h3>
-      <ul>
-        <li>
-          <a href='#'>Hello World!</a>
-        </li>
-        <img src='' alt='' />
-        <input type='text' name='' id='' />
-      </ul>
-    </div>
+    <section className='bookList'>
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident,
+          impedit deleniti cumque dolores quam reiciendis perferendis! Veritatis
+          earum enim dolores?
+        </p>
+      </Book>
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      />
+    </section>
   )
 }
 
-// const Greeting = () => {
-//   return React.createElement(
-//     'div',
-//     {},
-//     React.createElement('h1', {}, 'hello world!')
-//   )
-// }
+const Book = (props) => {
+  console.log(props)
+  //const { img, title, author } = props
+  return (
+    <article className='book'>
+      <img src={props.img} alt='' />
+      <h1>{props.title}</h1>
+      <h4>{props.author}</h4>
+      {props.children}
+    </article>
+  )
+}
 
-ReactDom.render(<Greeting />, document.getElementById('root'))
+ReactDom.render(<BookList />, document.getElementById('root'))
