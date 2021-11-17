@@ -59,7 +59,16 @@ function Greeting() {
 // }
 ```
 
+**Iteration**
 
+```
+(a)Fetch data from List
+
+(b)Loop through
+
+(c)Pass data into my Components
+
+```
 
 **Notes By**
 
