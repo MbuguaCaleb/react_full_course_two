@@ -24,7 +24,6 @@ function Greeting() {
 
 ```
 
-
 **Props**
 
 ```
@@ -122,6 +121,14 @@ export const books = [];
 Import { books } from './books'
 
 Rule
+
+```
+
+**Advanced React**
+
+```
+Hooks are functions that react provides to complete various tasks.
+
 
 ```
 
